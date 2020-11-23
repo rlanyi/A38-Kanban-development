@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag A38-Kanban-development:$(date +%Y%m%d-%H%M) --tag A38-Kanban-development:latest
+      run: docker build . --file Dockerfile --tag a38-kanban-backend:$(date +%Y%m%d-%H%M) --tag a38-kanban-backend:latest
