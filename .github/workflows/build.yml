@@ -27,10 +27,3 @@ jobs:
 
       - name: Push the Docker image
         run: docker push rlanyi/a38-kanban-backend:$date_tag && docker push rlanyi/a38-kanban-backend:latest
-
-      - name: Docker Hub Description
-        uses: peter-evans/dockerhub-description@v2
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: rlanyi/a38-kanban-backend
