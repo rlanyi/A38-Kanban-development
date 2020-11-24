@@ -10,6 +10,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    strategy:
+      fail-fast: false
+      matrix:
+        tag-schedule:
+          - ""
+          - "{{date 'YYYYMMDD-HHmm'}}"
+          - "latest"
+
     steps:
       - uses: actions/checkout@v2
 
@@ -19,7 +27,7 @@ jobs:
         with:
           images: rlanyi/a38-kanban-backend
           tag-sha: true
-          tag-schedule: "{{date 'YYYYMMDD-HHmm'}}"
+          tag-schedule: ${{ matrix.tag-schedule }}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
