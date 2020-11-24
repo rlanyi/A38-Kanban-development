@@ -23,4 +23,4 @@ jobs:
         run: docker build . --file Dockerfile --tag rlanyi/a38-kanban-backend:$(date +%Y%m%d-%H%M) --tag rlanyi/a38-kanban-backend:latest
 
       - name: Push the Docker image
-        run: docker push -a rlanyi/a38-kanban-backend
+        run: docker push rlanyi/a38-kanban-backend:$(date +%Y%m%d-%H%M) && docker push rlanyi/a38-kanban-backend:latest
