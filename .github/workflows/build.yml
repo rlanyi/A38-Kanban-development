@@ -31,8 +31,8 @@ jobs:
         with:
           push: true
           tags: |
-            a38-kanban-backend:${{ steps.date.outputs.date }}
-            a38-kanban-backend:latest
+            rlanyi/a38-kanban-backend:${{ steps.date.outputs.date }}
+            rlanyi/a38-kanban-backend:latest
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
